@@ -1,0 +1,48 @@
+﻿@using PaisentDetails.Models
+@model PaisentDetails.Models.PaisentModel
+@{
+    ViewBag.Title = "PaisentDetailsView";
+}
+
+<h2>PaisentDetailsView</h2>
+<div>
+    @using (Html.BeginForm())
+    {
+        <table class="table-bordered table-hover table-striped container">
+            <tr>
+                <td>
+                    @Html.LabelFor(x => x.p_id, "ID")
+                    @Html.TextBoxFor(x => x.p_id)
+                
+                    @Html.LabelFor(y => y.p_Fname, "Name")
+                    @Html.TextBoxFor(y => y.p_Fname)
+                
+                    @Html.LabelFor(z => z.p_Lname, "Surname")
+                    @Html.TextBoxFor(z => z.p_Lname)
+                
+                    @Html.LabelFor(a => a.p_Mobile, "Mobile")
+                    @Html.TextBoxFor(a => a.p_Mobile)
+                
+                    @Html.LabelFor(b => b.p_Age, "Age")
+                    @Html.TextBoxFor(b => b.p_Age)
+                
+                    @Html.LabelFor(c => c.p_Email, "Email")
+                    @Html.TextBoxFor(c => c.p_Email)
+                
+                    @Html.LabelFor(d => d.BloodGroup, "Blood Group")
+                    @Html.DropDownListFor(x => x.BloodGroup, Model.BG, "--Select--")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" id="btnsearch" name="x" value="Search" />
+                    <input type="submit" id="btninsert" name="x" value="Insert" />
+                    <input type="submit" id="btnupdate" name="x" value="Update" />
+                    <input type="submit" id="btndelete" name="x" value="Delete" />
+                </td>
+
+            </tr>
+        </table>
+
+    }
+</div>

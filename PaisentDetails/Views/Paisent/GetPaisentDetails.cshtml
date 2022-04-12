@@ -1,0 +1,52 @@
+﻿@using PaisentDetails.Models
+@model List<PaisentModel>
+    @{
+        ViewBag.Title = "GetPaisentDetails";
+    }
+
+    <h2>GetPaisentDetails</h2>
+
+    <body>
+
+        <table class="table-bordered table-hover table-striped container">
+            <tr>
+                <th class="col-lg-2">PaisentID</th>
+                <th class="col-lg-2">FirstName</th>
+                <th class="col-lg-2">LastName</th>
+                <th class="col-lg-2">MobileNumber</th>
+                <th class="col-lg-2">Age</th>
+                <th class="col-lg-2">Email</th>
+                <th class="col-lg-2">BloodGroup</th>
+
+
+            </tr>
+
+        </table>
+        @{
+            List<PaisentModel> paisentModels = Model;
+            foreach (PaisentDetails.Models.PaisentModel p in paisentModels)
+            {
+                <table class="table-bordered table-hover table-striped container">
+                    <tr>
+                        <td class="col-lg-2">@p.p_id </td>
+                        <td class="col-lg-2">@p.p_Fname </td>
+                        <td class="col-lg-2">@p.p_Lname </td>
+                        <td class="col-lg-2">@p.p_Mobile </td>
+                        <td class="col-lg-2">@p.p_Age </td>
+                        <td class="col-lg-2">@p.p_Email </td>
+                        <td class="col-lg-2">@p.BloodGroup </td>
+
+                    </tr>
+
+                </table>
+
+
+
+            }
+            @Html.ActionLink("Ins_Update_Search_Delete", "Ins_Update_Search_Delete")
+
+
+
+        }
+
+    </body>
